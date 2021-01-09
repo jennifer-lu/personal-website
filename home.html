@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jennifer Lu</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Jennifer Lu">
+    <meta name="author" content="Jennifer Lu">
+    <meta name="keywords" content="jennifer, lu, portfolio">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&amp;display=swap">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      var pixels = [];
+      var previousPixel = -1;
+      var activePixel = -1;
+      for (var i = 0; i < 500; i++) {
+          pixels[i] = 0;
+      }
+
+      var colors = ["#000000", "#2A001C", "#550039", "#800055", "#AA0071", "#BB256A", "#CC4C44", "#DD732D", "#EE9917", "#FFBF00"];
+      $(document).ready(function(){
+        for (var i = 0; i < 500; i++) {
+          document.getElementById("pixelol").innerHTML += '<li id="' + i + '" class="pixel" brightness="0"></li>';
+        }
+        $(document).mousemove(function(event){
+          previousPixel = activePixel;
+          activePixel = 20 * Math.floor((event.pageY - $(document).scrollTop()) * 20 / window.innerWidth) + Math.floor(event.pageX * 20 / window.innerWidth);
+          if (activePixel != previousPixel) {
+            update(activePixel);
+          }
+        });
+      });
+
+      function update(index) {
+        var pixel = document.getElementById(index);
+        var newBrightness = pixel.getAttribute("brightness");
+        if (newBrightness < 9) {
+          newBrightness++;
+        }
+        pixel.setAttribute("brightness", newBrightness);
+        pixel.style.background = colors[pixel.getAttribute("brightness")];
+      }
+    </script>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="right">
+        <a id="home-button" href="#home" class="button current">HOME</a>
+        <a id="about-button" href="#about" class="button">ABOUT</a>
+        <a id="projects-button" href="#projects" class="button">PROJECTS</a>
+        <a id="contact-button" href="#contact" class="button" style="padding-right: 2vw;">CONTACT</a>
+        <hr></hr>
+      </div>
+    </div>
+    <ol id="pixelol"></ol>
+    <div class="frame">
+      <a id="home"></a>
+      <div class="content" style="padding-top: 41vh; padding-bottom: 45vh;">
+          <h1>Hi, I'm Jennifer Lu</h1>
+          <h4 id="title-main" text="SOFTWARE ENGINEER">SOFTWARE ENGINEER</h4><h4 id="title" text="SOFTWARE ENGINEER">SOFTWARE ENGINEER</h4>
+      </div>
+      <a id="about"></a>
+      <div class="content" style="padding-top: 25vh; padding-bottom: 20vh;">
+        <img src="images/photo.png" class="photo">
+        <h5>I'm a Software Engineering student at the University of Waterloo</h5>
+        <h5>with experience in web, application, and front end development.</h5>
+        <h5>I enjoy painting, reading, and hiking in my spare time.</h5><br>
+        <a class="link" href="https://drive.google.com/file/d/1jTRYq4d7K1faffjoyk8LiXRqCUdneKt0/view?usp=sharing" target="_blank">RESUME</a>&ensp;&ensp;
+        <a onClick="javascript:window.open('mailto:jenniferlugm@gmail.com', 'mail');event.preventDefault()" href="mailto:jenniferlugm@gmail.com" target="_blank"><img src="images/gmail.png" class="icon"></a> &ensp;&ensp;
+        <a href="https://www.linkedin.com/in/jennifer--lu/" target="_blank"><img src="images/linkedin.png" class="icon"></a> &ensp;&ensp;
+        <a href="https://github.com/jennifer-lu" target="_blank"><img src="images/github.png" class="icon"></a>
+      </div>
+      <a id="projects">&ensp;</a>
+      <div class="content" style="padding-top: 10vh; padding-bottom: 5vh; display: inline-block;">
+        <h2>PROJECTS</h2>
+        <div class="project" style="float: left; margin-left: 10vw;">
+          <a class="link" href="https://github.com/jennifer-lu/kajag" target="_blank"><h3>TexScan</h3></a>&ensp;
+          <a href="https://github.com/jennifer-lu/kajag" target="_blank"><img src="images/github.png" class="icon-h3"></a><br><br>
+          <p>Document scanner that converts handwritten mathematical notation into LaTeX using neural network-based OCR.</p><br>
+          <p>○ Achieved 88% validation accuracy by training a ResNet model using TensorFlow, which was implemented in conjunction with OpenCV and PyTesseract for optical character recognition</p>
+          <p>○ Improved  accessibility  by  creating  a  React  web  app  with:  user  authentication  via  JWT,  document  upload,and PDF and LaTeX file downloads; files are also emailed to the user using a Python script</p>
+          <br><p>Keras • Tensorflow • Python • NumPy • Matplotlib • HTML • CSS • JavaScript • npm • Axios • React</p>
+        </div>
+        <div class="project" style="float: right; margin-right: 10vw;;">
+          <a class="link" href="https://firefox" target="_blank"><h3>Firefox Extensions</h3></a>&ensp;
+          <a href="https://github.com/jennifer-lu" target="_blank"><img src="images/firefox.png" class="icon-h3"></a><br><br>
+          <p>Document scanner that converts handwritten mathematical notation into LaTeX using neural network-based OCR.</p><br>
+          <p>○ Over 1000 users and 8000 downloads for animated and dynamic Firefox themes that change according tolocation, season, and time; developed using JavaScript</p>
+          <br><p>JavaScript • JSON • Adobe Photoshop • FFmpeg • ImageMagick</p>
+        </div>
+        <div class="project" style="float: left; margin-left: 10vw;">
+          <a class="link" href="https://github.com/jennifer-lu/personal-website" target="_blank"><h3>Personal Website</h3></a>&ensp;
+          <a href="https://github.com/jennifer-lu/personal-website" target="_blank"><img src="images/github.png" class="icon-h3"></a><br><br>
+          <p>This website...</p><br>
+          <p>○ Over 1000 users and 8000 downloads for animated and dynamic Firefox themes that change according tolocation, season, and time; developed using JavaScript</p>
+          <br><p>HTML • CSS • JavaScript • jQuery</p>
+        </div>
+        <div class="project" style="float: right; margin-right: 10vw;">
+          <a class="link" href="https://github.com/jennifer-lu/motion-simulator" target="_blank"><h3>Motion Simulator</h3></a>&ensp;
+          <a href="https://github.com/jennifer-lu/motion-simulator" target="_blank"><img src="images/github.png" class="icon-h3"></a><br><br>
+          <video class="hoverplay" loop>
+            <source src="images/motionsimulator.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video><br><br>
+          <p>○ Simulates an object in one-dimensional motion, displays graphs and equations of the object’s position, velocity,and acceleration. Allows the user to pause, play, alter, and reset the object’s motion.</p>
+          <p>○ Over 1000 users and 8000 downloads for animated and dynamic Firefox themes that change according tolocation, season, and time; developed using JavaScript</p>
+          <br><p>Java • Processing</p>
+        </div>
+      </div>
+    <a id="contact"></a>
+    <div class="content" style="padding-bottom: 5vh;">
+      <a onClick="javascript:window.open('mailto:jenniferlugm@gmail.com', 'mail');event.preventDefault()" href="mailto:jenniferlugm@gmail.com" target="_blank"><img src="images/gmail.png" class="icon"></a> &ensp;
+      <a class="link" onClick="javascript:window.open('mailto:jenniferlugm@gmail.com', 'mail');event.preventDefault()" href="mailto:jenniferlugm@gmail.com" target="_blank">jenniferlugm@gmail.com</a> &ensp;&ensp;&ensp;
+      <a href="https://www.linkedin.com/in/jennifer--lu/" target="_blank"><img src="images/linkedin.png" class="icon"></a> &ensp;
+      <a class="link" href="https://www.linkedin.com/in/jennifer--lu/" target="_blank">linkedin.com/in/jennifer--lu</a> &ensp;&ensp;&ensp;
+      <a href="https://github.com/jennifer-lu" target="_blank"><img src="images/github.png" class="icon"></a> &ensp;
+      <a class="link" href="https://github.com/jennifer-lu" target="_blank">github.com/jennifer-lu</a>
+    </div>
+  </div>
+  <script>
+    $(".button").click(function(e) {
+      e.preventDefault();
+      var href = $(this).attr("href");
+      var location = $(href).offset().top - $(".frame").offset().top + $(".frame").scrollTop() + 1;
+      $(".frame").animate({scrollTop: location}, "swing");
+    });
+
+    $(".frame").scroll(function(e) {
+      let scrollY = $(".frame").scrollTop();
+      if (scrollY < $("#about").offset().top - $(".frame").offset().top + $(".frame").scrollTop()) {
+        if ($("#home-button").attr("class") != "button current") {
+          $(".current").removeClass("current");
+          $("#home-button").addClass("current");
+        }
+      } else if (scrollY < $("#projects").offset().top - $(".frame").offset().top + $(".frame").scrollTop()) {
+        if ($("#about-button").attr("class") != "button current") {
+          $(".current").removeClass("current");
+          $("#about-button").addClass("current");
+        }
+      } else if (scrollY + $(window).height() - $(".frame").offset().top < $("#contact").offset().top - $(".frame").offset().top + $(".frame").scrollTop()) {
+        if ($("#projects-button").attr("class") != "button current") {
+          $(".current").removeClass("current");
+          $("#projects-button").addClass("current");
+        }
+      } else {
+        if ($("#contact-button").attr("class") != "button current") {
+          $(".current").removeClass("current");
+          $("#contact-button").addClass("current");
+        }
+      }
+    });
+
+    var titles = ["SOFTWARE ENGINEER", "GRAPHIC DESIGNER", "UNDERGRADUATE STUDENT"];
+    var currentTitle = 0;
+
+    function changeText() {
+      $("#title").text(titles[currentTitle]);
+      $("#title").attr("text", titles[currentTitle]);
+      $("#title-main").text(titles[currentTitle]);
+      $("#title").attr("class", "glitch");
+      $("#title-main").attr("class", "glitch-main");
+      setTimeout(function() {$("#title").attr("class", ""); $("#title-main").attr("class", "");}, 200);
+      setTimeout(function() {$("#title").attr("class", "glitch"); $("#title-main").attr("class", "glitch-main");}, 1800);
+      if (currentTitle === 2)
+      {
+        currentTitle = 0;
+      } else {
+        currentTitle++;
+      }
+    }
+    changeText();
+    setInterval(changeText, 2000);
+
+    $(".hoverplay").on("mouseover", function(event) {
+      this.play();
+
+    }).on('mouseout', function(event) {
+      this.pause();
+
+    });
+  </script>
+  </body>
+</html>

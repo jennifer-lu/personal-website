@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: black;
+}
+
+body,h1,h2,h3,h4,h5,h6,p,a {
+  font-family: "Raleway", sans-serif;
+  color: white;
+  line-height: 1.5;
+}
+
+::selection {
+  background: rgba(255,255,255,0.2);;
+}
+
+::-moz-selection {
+  background: rgba(255,255,255,0.2);;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 5vw;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 3vw;
+}
+
+h3 {
+  padding-bottom: 0.2vw;
+  height: 2.5vw;
+  font-weight: 600;
+  font-size: 2vw;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 1.5vw;
+}
+
+h5 {
+  font-weight: 400;
+  font-size: 1.25vw;
+}
+
+p {
+  font-weight: 400;
+  font-size: 1.1vw;
+}
+
+a {
+  font-weight: 400;
+  font-size: 1.25vw;
+  text-decoration: none;
+}
+
+a:active, a:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none;
+}
+
+.button {
+  font-size: 1vw;
+}
+
+ol {
+  position: fixed;
+  list-style-type: none;
+  filter: blur(20px) opacity(50%);
+}
+
+video {
+  width: 30vw;
+}
+
+.pixel {
+  position: relative;
+  float: left;
+  width: 5vw;
+  height: 5vw;
+  background-color: black;
+}
+
+.right{
+  float: right;
+}
+
+.navbar {
+  position: fixed;
+  display: inline-block;
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+}
+
+.button {
+  border: none;
+  display: inline-block;
+  padding: 1vw 1vw 0.25vw 1vw;;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.content {
+  position: relative;
+  text-align: center;
+}
+
+.icon {
+  width: 2vw;
+  height: 2vw;
+  transform: translate(0%, 25%);
+}
+
+.icon-h3 {
+  width: 2vw;
+  height: 2vw;
+  transform: translate(0%, 15%);
+}
+
+.project {
+  margin: 1.5vw 0vw;
+  /* border: 0.1vw solid white; */
+  padding: 2vw 2vw;
+  position: relative;
+  width: 34vw;
+  height: 40vw;
+}
+
+.frame {
+  -webkit-mask-image: linear-gradient(to top, white 85%, transparent 100%);
+  mask-image: linear-gradient(to top, white 85%, transparent 100%);
+  position: absolute;
+  margin-top: 0vh;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.link {
+  display: inline-block;
+  padding-bottom: 0.25vw;
+  position: relative;
+}
+
+.link::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  height: 0.075vw;
+  left: 50%;
+  position: absolute;
+  background: white;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+
+  width: 0;
+}
+
+.link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.photo {
+  width: 15vw;
+  height: 15vw;
+  margin-bottom: 2vw;
+}
+
+#title {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  color: transparent;
+}
+
+#title-main {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.glitch::before, .glitch::after {
+  color: white;
+  content: attr(text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 5%;
+  clip-path: inset(30% 0% 40% 0%);
+  animation: glitch-1 0.5s infinite steps(1);
+}
+
+.glitch::after {
+  left: -5%;
+  clip-path: inset(0% 0% 70% 0%);
+  animation: glitch-2 0.5s infinite steps(1);
+}
+
+.glitch-main {
+  clip-path: inset(60% 0% 0% 0%);
+  animation: glitch-3 0.5s infinite steps(1);
+}
+
+@keyframes glitch-1 {
+  0% {
+    clip-path: inset(40% 0% 40% 0%);
+  }
+  20% {
+    clip-path: inset(0% 0% 40% 0%);
+  }
+  40% {
+    clip-path: inset(0% 0% 60% 0%);
+  }
+  80% {
+    clip-path: inset(70% 0% 0% 0%);
+  }
+  60% {
+    clip-path: inset(30% 0% 40% 0%);
+  }
+  100% {
+    clip-path: inset(0% 0% 40% 0%);
+  }
+}
+
+@keyframes glitch-2 {
+  0% {
+    clip-path: inset(60% 0% 0% 0%);
+  }
+  20% {
+    clip-path: inset(70% 0% 40% 0%);
+  }
+  40% {
+    clip-path: inset(60% 0% 60% 0%);
+  }
+  80% {
+    clip-path: inset(0% 0% 50% 0%);
+  }
+  60% {
+    clip-path: inset(0% 0% 70% 0%);
+  }
+  100% {
+    clip-path: inset(70% 0% 40% 0%);
+  }
+}
+
+@keyframes glitch-3 {
+  0% {
+    clip-path: inset(0% 0% 60% 0%);
+  }
+  20% {
+    clip-path: inset(70% 0% 0% 0%);
+  }
+  40% {
+    clip-path: inset(60% 0% 0% 0%);
+  }
+  80% {
+    clip-path: inset(50% 0% 30% 0%);
+  }
+  60% {
+    clip-path: inset(60% 0% 0% 0%);
+  }
+  100% {
+    clip-path: inset(70% 0% 0% 0%);
+  }
+}
+
+hr {
+  margin-left: 3.8%;
+  width: 11.5%;
+  height: 0.1vw;
+  background: white;
+  border: none;
+  transition: .3s ease-in-out;
+}
+
+#home-button.current ~ hr {
+  margin-left: 3.8%;
+  width: 11.5%;
+}
+
+#about-button.current ~ hr {
+  margin-left: 23.75%;
+  width: 14%;
+}
+
+#projects-button.current ~ hr {
+  margin-left: 46.25%;
+  width: 19.5%;
+}
+
+#contact-button.current ~ hr {
+  margin-left: 74%;
+  width: 18.4%;
+}
