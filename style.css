@@ -27,14 +27,14 @@ h1 {
 }
 
 h2 {
-  font-weight: 600;
+  font-weight: 800;
   font-size: 3vw;
 }
 
 h3 {
   padding-bottom: 0.2vw;
   height: 2.5vw;
-  font-weight: 600;
+  font-weight: 800;
   font-size: 2vw;
 }
 
@@ -55,7 +55,7 @@ p {
 
 a {
   font-weight: 400;
-  font-size: 1.25vw;
+  font-size: 1.1vw;
   text-decoration: none;
 }
 
@@ -75,8 +75,16 @@ ol {
   filter: blur(20px) opacity(50%);
 }
 
+ul {
+  margin-left: 3vw;
+  width: 27vw;
+  text-align: left;
+  font-weight: 400;
+  font-size: 1.1vw;
+}
+
 video {
-  width: 30vw;
+  height: 17vw;
 }
 
 .pixel {
@@ -128,11 +136,10 @@ video {
 }
 
 .project {
-  margin: 1.5vw 0vw;
-  /* border: 0.1vw solid white; */
+  margin: 3vw 0vw;
   padding: 2vw 2vw;
   position: relative;
-  width: 34vw;
+  width: 32vw;
   height: 40vw;
 }
 
