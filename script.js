@@ -2,7 +2,7 @@ $(".button").click(function(e) {
   e.preventDefault();
   var href = $(this).attr("href");
   var location = $(href).offset().top - $(".frame").offset().top + $(".frame").scrollTop() + 1;
-  $(".frame").animate({scrollTop: location}, "swing");
+  $(".frame").animate({scrollTop: location},  500);
 });
 
 $(".frame").scroll(function(e) {
