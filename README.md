@@ -5,7 +5,7 @@ Responsive website that showcases my projects. Visit at [jenniferlu.ca](http://j
 
 ## Demo
 
-![website-demo](https://github.com/jennifer-lu/personal-website/blob/master/demo.gif)
+![website-demo](https://github.com/jennifer-lu/personal-website/blob/main/demo.gif)
 
 
 ## Author
